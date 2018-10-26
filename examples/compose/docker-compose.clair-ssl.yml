@@ -37,6 +37,8 @@ services:
     volumes:
       - ./secrets:/certificates:ro
       - static:/srv/Portus/public
+      - ~/Portus/config/config.yml:/srv/Portus/config/config.yml
+    command: [-config, /config.yml]
 
   background:
     image: opensuse/portus:head
@@ -67,6 +69,8 @@ services:
       - db
     volumes:
       - ./secrets:/certificates:ro
+      - ~/Portus/config/config.yml:/srv/Portus/config/config.yml
+    command: [-config, /config.yml]
 
   db:
     image: library/mariadb:10.0.23
