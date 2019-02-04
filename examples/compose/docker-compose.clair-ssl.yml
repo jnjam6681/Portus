@@ -153,3 +153,10 @@ services:
 volumes:
   static:
     driver: local
+    
+# volumes:
+#   static:
+#     driver_opts:
+#       type: none
+#       device: "/mnt/docker-registry-portus/static"
+#       o: bind
